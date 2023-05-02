@@ -9,14 +9,8 @@ function ShoppingList({ items }) {
     setSelectedCategory(e.target.value)
   }
 
-  const filteredItems = items.filter(item => {
-    if (selectedCategory === "All") {
-      return true
-    } else {
-      return item.category === selectedCategory
-    }
-  })
-
+  const filteredItems = items.filter(item => selectedCategory === "All" ? true : item.category === selectedCategory)
+  
   return (
     <div className="ShoppingList">
       <div className="Filter">
